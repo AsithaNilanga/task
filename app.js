@@ -4,6 +4,7 @@ import windowResize from './util/windowResize.js'
 import navScroll from './util/navScroll.js'
 import setYear from './util/year.js'
 import displayTestimonies from './util/displayTestimonies.js'
+import {data} from './util/data.js'
 
 // NAVBAR VAR
 const navbar = get('.navbar');
@@ -58,19 +59,11 @@ const singleTestimonySm = testimoniesSm.querySelectorAll('.single-testimony');
 let counter = 0;
 
 next.addEventListener('click', ()=>{
-    counter++;
-    if(counter > 2){
-        counter = 0;
-    }
-    setTestimonies(counter);
+    counterPlus();
 });
 
 prev.addEventListener('click', ()=>{
-    counter--;
-    if(counter < 0){
-        counter = (data.length / 3) - 1;
-    }
-    setTestimonies(counter);
+    counterMinus();
 });
 
 carousel.forEach((item, index) => {
@@ -98,4 +91,46 @@ const carouselClass = ()=>{
     carousel.forEach(items=>{
         items.classList.remove('selected');
     });
+}
+
+// SWIPE
+let startPos = 0;
+let endPos = 0;
+
+singleTestimonySm.forEach(item =>{
+    item.addEventListener('touchstart', (e)=>{
+        console.log('start');
+        startPos = e.touches[0].clientX;
+        console.log(startPos);
+    });
+    item.addEventListener('touchmove', (e)=>{
+        console.log('move');
+        endPos = e.touches[0].clientX;
+        console.log(endPos);
+    });
+    item.addEventListener('touchend', (e)=>{
+        console.log('end');
+        if(endPos < startPos){
+            counterPlus();
+        }
+        else if(endPos > startPos){
+            counterMinus();
+            }
+    });
+})
+
+const counterPlus = ()=>{
+    counter++;
+    if(counter > 2){
+        counter = 0;
+    }
+    setTestimonies(counter);
+}
+
+const counterMinus = ()=>{
+    counter--;
+    if(counter < 0){
+        counter = (data.length / 3) - 1;
+    }
+    setTestimonies(counter);
 }
