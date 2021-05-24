@@ -110,10 +110,11 @@ singleTestimonySm.forEach(item =>{
     });
     item.addEventListener('touchend', (e)=>{
         console.log('end');
-        if(endPos < startPos){
+        let finalPos = startPos - endPos;
+        if(finalPos > 10){
             counterPlus();
         }
-        else if(endPos > startPos){
+        else if(finalPos < -10){
             counterMinus();
             }
     });
