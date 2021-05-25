@@ -543,7 +543,7 @@ a {
 .doctor-section {
   margin: 0 auto;
   width: 85vw;
-  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.125);
   margin-top: 10rem;
   margin-bottom: 5rem;
   border-radius: var(--border-radius-1);
@@ -622,6 +622,7 @@ a {
   .doctor-section {
     width: 70vw;
     margin-top: 15rem;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.05);
   }
 
   .dummy-container {
@@ -847,7 +848,7 @@ a {
 .single-treatment {
   display: grid;
   grid-template-rows: 1fr auto;
-  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.03);
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.125);
   border-radius: var(--border-radius-1);
   margin: 0 0 4rem 0;
   background-color: var(--clr-white);
@@ -877,7 +878,6 @@ a {
   border-bottom-right-radius: var(--border-radius-1);
   border-bottom-left-radius: var(--border-radius-1);
   overflow: hidden;
-  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.08);
 }
 
 .treatment-img {
