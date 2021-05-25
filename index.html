@@ -285,10 +285,7 @@
     <section class="contact-us">
         <section class="contact-section section-center">
             <article class="g-map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.723710338547!2d-73.84763998509507!3d40.72409834481318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f39d35e6d61%3A0x615777d5d02b547e!2sVital%20Medical%20of%20Forest%20Hills!5e0!3m2!1sen!2slk!4v1621595618739!5m2!1sen!2slk"
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="g-map">
-                </iframe>
+                <div class="g-map"></div>
             </article>
 
             <article class="contact-form section-center">
@@ -358,5 +355,10 @@
 
     <!-- JavaScript -->
     <script type="module" src="./app.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNBdxgxGa0v3Zp0GfDkeJM6FT1PmHGS6U&callback=initMap&libraries=&v=weekly"
+        async>
+    </script>
+
 </body>
 </html>

@@ -5,6 +5,7 @@ import navScroll from './util/navScroll.js'
 import setYear from './util/year.js'
 import displayTestimonies from './util/displayTestimonies.js'
 import {data} from './util/data.js'
+import initMap from './util/maps.js'
 
 // NAVBAR VAR
 const navbar = get('.navbar');
@@ -21,6 +22,8 @@ const testimoniesLg = get('.t-lg');
 const testimoniesSm = get('.t-sm');
 const carouselContainer = get('.carousel-container'); 
 const carousel = carouselContainer.querySelectorAll('.carousel'); 
+
+initMap();
 
 // YEAR VAR
 const year = get('.year');  
@@ -116,7 +119,7 @@ singleTestimonySm.forEach(item =>{
         }
         else if(finalPos < -25){
             counterMinus();
-            }
+        }
     });
 })
 
